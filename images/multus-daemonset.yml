@@ -119,7 +119,8 @@ spec:
       serviceAccountName: multus
       initContainers:
       - name: install-cni-binaries
-        image: rancher/coreos-flannel-cni:v0.3.0
+        # FIXME: update this when https://github.com/containernetworking/plugins/issues/244 is done
+        image: micwy/k8s-cni-plugins:latest
         command:
           - /bin/sh
           - -ce
